@@ -1,25 +1,25 @@
-<?php namespace RainLab\Notify\Models;
+<?php namespace Winter\Notify\Models;
 
 use Model;
 use ApplicationException;
-use RainLab\Notify\Classes\EventBase;
-use RainLab\Notify\Classes\ConditionBase;
+use Winter\Notify\Classes\EventBase;
+use Winter\Notify\Classes\ConditionBase;
 
 /**
  * Notification rule
  *
- * @package rainlab\notify
+ * @package winter\notify
  * @author Alexey Bobkov, Samuel Georges
  */
 class NotificationRule extends Model
 {
-    use \October\Rain\Database\Traits\Purgeable;
-    use \October\Rain\Database\Traits\Validation;
+    use \Winter\Storm\Database\Traits\Purgeable;
+    use \Winter\Storm\Database\Traits\Validation;
 
     /**
      * @var string The database table used by the model.
      */
-    protected $table = 'rainlab_notify_notification_rules';
+    protected $table = 'winter_notify_notification_rules';
 
     /**
      * @var array Guarded fields
@@ -122,7 +122,7 @@ class NotificationRule extends Model
 
     /**
      * Returns the event class extension object.
-     * @return \RainLab\Notify\Classes\NotificationEvent
+     * @return \Winter\Notify\Classes\NotificationEvent
      */
     public function getEventObject()
     {

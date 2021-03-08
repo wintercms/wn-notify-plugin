@@ -1,13 +1,13 @@
-<?php namespace RainLab\Notify\Classes;
+<?php namespace Winter\Notify\Classes;
 
 use System\Classes\PluginManager;
-use October\Rain\Extension\ExtensionBase;
-use RainLab\Notify\Interfaces\Action as ActionInterface;
+use Winter\Storm\Extension\ExtensionBase;
+use Winter\Notify\Interfaces\Action as ActionInterface;
 
 /**
  * Notification action base class
  *
- * @package rainlab\notify
+ * @package winter\notify
  * @author Alexey Bobkov, Samuel Georges
  */
 class ActionBase extends ExtensionBase implements ActionInterface

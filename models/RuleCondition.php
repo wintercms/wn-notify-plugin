@@ -1,8 +1,8 @@
-<?php namespace RainLab\Notify\Models;
+<?php namespace Winter\Notify\Models;
 
 use Model;
-use RainLab\Notify\Classes\CompoundCondition;
-use RainLab\Notify\Interfaces\CompoundCondition as CompoundConditionInterface;
+use Winter\Notify\Classes\CompoundCondition;
+use Winter\Notify\Interfaces\CompoundCondition as CompoundConditionInterface;
 use SystemException;
 
 /**
@@ -10,12 +10,12 @@ use SystemException;
  */
 class RuleCondition extends Model
 {
-    use \October\Rain\Database\Traits\Validation;
+    use \Winter\Storm\Database\Traits\Validation;
 
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'rainlab_notify_rule_conditions';
+    public $table = 'winter_notify_rule_conditions';
 
     /**
      * @var array Guarded fields

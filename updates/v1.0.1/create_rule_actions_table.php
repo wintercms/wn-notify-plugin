@@ -1,8 +1,8 @@
-<?php namespace RainLab\Notify\Updates;
+<?php namespace Winter\Notify\Updates;
 
 use Schema;
-use October\Rain\Database\Schema\Blueprint;
-use October\Rain\Database\Updates\Migration;
+use Winter\Storm\Database\Schema\Blueprint;
+use Winter\Storm\Database\Updates\Migration;
 
 class CreateRuleActionsTable extends Migration
 {

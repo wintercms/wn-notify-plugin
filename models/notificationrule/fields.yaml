@@ -22,11 +22,11 @@ tabs:
 
     fields:
         rule_actions:
-            type: RainLab\Notify\FormWidgets\ActionBuilder
+            type: Winter\Notify\FormWidgets\ActionBuilder
             tab: Actions
 
         rule_conditions:
-            type: RainLab\Notify\FormWidgets\ConditionBuilder
+            type: Winter\Notify\FormWidgets\ConditionBuilder
             tab: Conditions
 
         is_enabled:

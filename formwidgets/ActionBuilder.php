@@ -1,8 +1,8 @@
-<?php namespace RainLab\Notify\FormWidgets;
+<?php namespace Winter\Notify\FormWidgets;
 
 use Backend\Classes\FormField;
 use Backend\Classes\FormWidgetBase;
-use RainLab\Notify\Classes\ActionBase;
+use Winter\Notify\Classes\ActionBase;
 use ApplicationException;
 use ValidationException;
 use Exception;
@@ -52,8 +52,8 @@ class ActionBuilder extends FormWidgetBase
      */
     protected function loadAssets()
     {
-        $this->addJs('js/actions.js', 'RainLab.Notify');
-        $this->addCss('css/actions.css', 'RainLab.Notify');
+        $this->addJs('js/actions.js', 'Winter.Notify');
+        $this->addCss('css/actions.css', 'Winter.Notify');
     }
 
     /**

@@ -1,8 +1,8 @@
-1.0.1:
+"1.0.1":
     - First version of Notify
-    - create_notifications_table.php
-    - create_notification_rules_table.php
-    - create_rule_conditions_table.php
-    - create_rule_actions_table.php
-1.0.2: Fixes crashing bug.
-1.0.3: Added Turkish & Russian translations, various bug fixes.
+    - v1.0.1/create_notifications_table.php
+    - v1.0.1/create_notification_rules_table.php
+    - v1.0.1/create_rule_conditions_table.php
+    - v1.0.1/create_rule_actions_table.php
+"1.0.2": Fixes crashing bug.
+"1.0.3": Added Turkish & Russian translations, various bug fixes.

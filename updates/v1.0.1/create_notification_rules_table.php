@@ -1,7 +1,7 @@
-<?php namespace RainLab\Notify\Updates;
+<?php namespace Winter\Notify\Updates;
 
 use Schema;
-use October\Rain\Database\Updates\Migration;
+use Winter\Storm\Database\Updates\Migration;
 
 class CreateNotificationRulesTable extends Migration
 {

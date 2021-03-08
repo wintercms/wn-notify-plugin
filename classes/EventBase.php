@@ -1,18 +1,18 @@
-<?php namespace RainLab\Notify\Classes;
+<?php namespace Winter\Notify\Classes;
 
 use Str;
 use Yaml;
 use File;
 use Event;
 use System\Classes\PluginManager;
-use October\Rain\Extension\ExtensionBase;
-use RainLab\Notify\Classes\Notifier;
-use RainLab\Notify\Interfaces\Event as EventInterface;
+use Winter\Storm\Extension\ExtensionBase;
+use Winter\Notify\Classes\Notifier;
+use Winter\Notify\Interfaces\Event as EventInterface;
 
 /**
  * Notification event base class
  *
- * @package rainlab\notify
+ * @package winter\notify
  * @author Alexey Bobkov, Samuel Georges
  */
 class EventBase extends ExtensionBase implements EventInterface

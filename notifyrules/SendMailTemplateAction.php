@@ -1,10 +1,10 @@
-<?php namespace RainLab\Notify\NotifyRules;
+<?php namespace Winter\Notify\NotifyRules;
 
 use Mail;
 use Lang;
 use Config;
 use System\Models\MailTemplate;
-use RainLab\Notify\Classes\ActionBase;
+use Winter\Notify\Classes\ActionBase;
 use Backend\Models\User as AdminUserModel;
 use Backend\Models\UserGroup as AdminGroupModel;
 use ApplicationException;

@@ -1,4 +1,4 @@
-<?php namespace RainLab\Notify\Classes;
+<?php namespace Winter\Notify\Classes;
 
 use Db;
 use App;
@@ -82,7 +82,7 @@ class ModelAttributesConditionBase extends ConditionBase
 
     public function defineFormFields()
     {
-        return plugins_path('rainlab/notify/classes/modelattributesconditionbase/fields.yaml');
+        return plugins_path('winter/notify/classes/modelattributesconditionbase/fields.yaml');
     }
 
     //
@@ -257,7 +257,7 @@ class ModelAttributesConditionBase extends ConditionBase
         $keyFrom = $referenceInfo->primaryKey;
 
         // Determine if the model uses a tree trait
-        $treeTraits = ['October\Rain\Database\Traits\NestedTree', 'October\Rain\Database\Traits\SimpleTree'];
+        $treeTraits = ['Winter\Storm\Database\Traits\NestedTree', 'Winter\Storm\Database\Traits\SimpleTree'];
         $usesTree = count(array_intersect($treeTraits, class_uses($referenceModel))) > 0;
 
         $results = $referenceModel->get();
@@ -472,7 +472,7 @@ class ModelAttributesConditionBase extends ConditionBase
                 'sortable' => false,
                 'type' => 'partial',
                 'width' => '10px',
-                'path' => plugins_path('rainlab/notify/classes/modelattributesconditionbase/_column_select_record.htm')
+                'path' => plugins_path('winter/notify/classes/modelattributesconditionbase/_column_select_record.htm')
             ]
         ];
 

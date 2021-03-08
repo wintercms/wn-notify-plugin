@@ -1,21 +1,21 @@
-<?php namespace RainLab\Notify\Classes;
+<?php namespace Winter\Notify\Classes;
 
 use App;
 use Queue;
 use Event;
 use BackendAuth;
 use System\Classes\PluginManager;
-use RainLab\Notify\Models\NotificationRule as NotificationRuleModel;
+use Winter\Notify\Models\NotificationRule as NotificationRuleModel;
 
 /**
  * Notification manager
  *
- * @package rainlab\notify
+ * @package winter\notify
  * @author Alexey Bobkov, Samuel Georges
  */
 class Notifier
 {
-    use \October\Rain\Support\Traits\Singleton;
+    use \Winter\Storm\Support\Traits\Singleton;
 
     /**
      * @var array Cache of registration callbacks.

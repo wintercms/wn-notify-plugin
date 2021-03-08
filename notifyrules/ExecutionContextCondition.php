@@ -1,7 +1,7 @@
-<?php namespace RainLab\Notify\NotifyRules;
+<?php namespace Winter\Notify\NotifyRules;
 
 use Cms\Classes\Theme;
-use RainLab\Notify\Classes\ConditionBase;
+use Winter\Notify\Classes\ConditionBase;
 
 class ExecutionContextCondition extends ConditionBase
 {

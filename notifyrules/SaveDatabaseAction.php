@@ -1,7 +1,7 @@
-<?php namespace RainLab\Notify\NotifyRules;
+<?php namespace Winter\Notify\NotifyRules;
 
 use Ramsey\Uuid\Uuid;
-use RainLab\Notify\Classes\ActionBase;
+use Winter\Notify\Classes\ActionBase;
 use Illuminate\Database\Eloquent\Model as EloquentModel;
 use ApplicationException;
 

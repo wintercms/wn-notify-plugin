@@ -1,4 +1,4 @@
-<?php namespace RainLab\Notify;
+<?php namespace Winter\Notify;
 
 use Backend;
 use System\Classes\PluginBase;
@@ -12,8 +12,8 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name'        => 'rainlab.notify::lang.plugin.name',
-            'description' => 'rainlab.notify::lang.plugin.description',
+            'name'        => 'winter.notify::lang.plugin.name',
+            'description' => 'winter.notify::lang.plugin.description',
             'author'      => 'Alexey Bobkov, Samuel Georges',
             'icon'        => 'icon-bullhorn'
         ];
@@ -23,12 +23,12 @@ class Plugin extends PluginBase
     {
         return [
             'notifications' => [
-                'label'       => 'rainlab.notify::lang.notifications.menu_label',
-                'description' => 'rainlab.notify::lang.notifications.menu_description',
+                'label'       => 'winter.notify::lang.notifications.menu_label',
+                'description' => 'winter.notify::lang.notifications.menu_description',
                 'category'    => SettingsManager::CATEGORY_NOTIFICATIONS,
                 'icon'        => 'icon-bullhorn',
-                'url'         => Backend::url('rainlab/notify/notifications'),
-                'permissions' => ['rainlab.notify.manage_notifications'],
+                'url'         => Backend::url('winter/notify/notifications'),
+                'permissions' => ['winter.notify.manage_notifications'],
                 'order'       => 600
             ],
         ];
@@ -40,11 +40,11 @@ class Plugin extends PluginBase
             'groups' => [],
             'events' => [],
             'actions' => [
-                \RainLab\Notify\NotifyRules\SaveDatabaseAction::class,
-                \RainLab\Notify\NotifyRules\SendMailTemplateAction::class,
+                \Winter\Notify\NotifyRules\SaveDatabaseAction::class,
+                \Winter\Notify\NotifyRules\SendMailTemplateAction::class,
             ],
             'conditions' => [
-                \RainLab\Notify\NotifyRules\ExecutionContextCondition::class,
+                \Winter\Notify\NotifyRules\ExecutionContextCondition::class,
             ],
         ];
     }
@@ -52,9 +52,9 @@ class Plugin extends PluginBase
     public function registerPermissions()
     {
         return [
-            'rainlab.notify.manage_notifications' => [
+            'winter.notify.manage_notifications' => [
                 'tab' => SettingsManager::CATEGORY_NOTIFICATIONS,
-                'label' => 'rainlab.notify::lang.permissions.manage_notifications'
+                'label' => 'winter.notify::lang.permissions.manage_notifications'
             ],
         ];
     }

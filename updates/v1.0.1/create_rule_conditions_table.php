@@ -8,7 +8,7 @@ class CreateConditionsRulesTable extends Migration
 {
     public function up()
     {
-        Schema::create('rainlab_notify_rule_conditions', function(Blueprint $table) {
+        Schema::create('winter_notify_rule_conditions', function(Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('class_name')->nullable();
@@ -24,6 +24,6 @@ class CreateConditionsRulesTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('rainlab_notify_rule_conditions');
+        Schema::dropIfExists('winter_notify_rule_conditions');
     }
 }

@@ -40,7 +40,7 @@ class Notifications extends Controller
     {
         parent::__construct();
 
-        BackendMenu::setContext('Winter CMS.System', 'system', 'settings');
+        BackendMenu::setContext('Winter.System', 'system', 'settings');
         SettingsManager::setContext('Winter.Notify', 'notifications');
     }
 

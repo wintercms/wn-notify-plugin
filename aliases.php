@@ -1,4 +1,7 @@
 <?php
+
+use Winter\Storm\Support\ClassLoader;
+
 /**
  * To allow compatibility with plugins that extend the original RainLab.Notify plugin, this will alias those classes to
  * use the new Winter.Notify classes.
@@ -22,8 +25,4 @@ $aliases = [
     Winter\Notify\Models\NotificationRule::class                => 'RainLab\Notify\Models\NotificationRule',
 ];
 
-foreach ($aliases as $original => $alias) {
-    if (!class_exists($alias)) {
-        class_alias($original, $alias);
-    }
-}
+app(ClassLoader::class)->addAliases($aliases);

@@ -26,13 +26,13 @@ public function registerNotificationRules()
 {
     return [
         'events' => [
-            \RainLab\User\NotifyRules\UserActivatedEvent::class,
+            \Winter\User\NotifyRules\UserActivatedEvent::class,
         ],
         'actions' => [
-            \RainLab\User\NotifyRules\SaveToDatabaseAction::class,
+            \Winter\User\NotifyRules\SaveToDatabaseAction::class,
         ],
         'conditions' => [
-            \RainLab\User\NotifyRules\UserAttributeCondition::class
+            \Winter\User\NotifyRules\UserAttributeCondition::class
         ],
         'groups' => [
             'user' => [
@@ -40,27 +40,27 @@ public function registerNotificationRules()
                 'icon' => 'icon-user'
             ],
         ],
-        'presets' => '$/rainlab/user/config/notify_presets.yaml',
+        'presets' => '$/winter/user/config/notify_presets.yaml',
     ];
 }
 ```
 
-Here is an example of triggering a notification. The system event `rainlab.user.activate` is bound to the `UserActivatedEvent` class.
+Here is an example of triggering a notification. The system event `winter.user.activate` is bound to the `UserActivatedEvent` class.
 
 ```php
 // Bind to a system event
-\RainLab\Notify\Classes\Notifier::bindEvents([
-    'rainlab.user.activate' => \RainLab\User\NotifyRules\UserActivatedEvent::class
+\Winter\Notify\Classes\Notifier::bindEvents([
+    'winter.user.activate' => \Winter\User\NotifyRules\UserActivatedEvent::class
 ]);
 
 // Fire the system event
-Event::fire('rainlab.user.activate', [$this]);
+Event::fire('winter.user.activate', [$this]);
 ```
 
 Here is an example of registering context parameters, which are available globally to all notifications.
 
 ```php
-\RainLab\Notify\Classes\Notifier::instance()->registerCallback(function($manager) {
+\Winter\Notify\Classes\Notifier::instance()->registerCallback(function($manager) {
     $manager->registerGlobalParams([
         'user' => Auth::getUser()
     ]);
@@ -76,13 +76,13 @@ Here is an example of an event preset:
 
 welcome_email:
     name: Send welcome email to user
-    event: RainLab\User\NotifyRules\UserRegisteredEvent
+    event: Winter\User\NotifyRules\UserRegisteredEvent
     items:
-        - action: RainLab\Notify\NotifyRules\SendMailTemplateAction
-          mail_template: rainlab.user::mail.welcome
+        - action: Winter\Notify\NotifyRules\SendMailTemplateAction
+          mail_template: winter.user::mail.welcome
           send_to_mode: user
     conditions:
-        - condition: RainLab\Notify\NotifyRules\ExecutionContextCondition
+        - condition: Winter\Notify\NotifyRules\ExecutionContextCondition
           subcondition: environment
           operator: is
           value: dev
@@ -94,13 +94,13 @@ welcome_email:
 An event class is responsible for preparing the parameters passed to the conditions and actions. The static method `makeParamsFromEvent` will take the arguments provided by the system event and convert them in to parameters.
 
 ```php
-class UserActivatedEvent extends \RainLab\Notify\Classes\EventBase
+class UserActivatedEvent extends \Winter\Notify\Classes\EventBase
 {
     /**
      * @var array Local conditions supported by this event.
         */
     public $conditions = [
-        \RainLab\User\NotifyRules\UserAttributeCondition::class
+        \Winter\User\NotifyRules\UserAttributeCondition::class
     ];
 
     /**
@@ -143,7 +143,7 @@ class UserActivatedEvent extends \RainLab\Notify\Classes\EventBase
 Action classes define the final step in a notification and subsequently perform the notification itself. Some examples might be sending and email or writing to the database.
 
 ```php
-class SendMailTemplateAction extends \RainLab\Notify\Classes\ActionBase
+class SendMailTemplateAction extends \Winter\Notify\Classes\ActionBase
 {
     /**
      * Returns information about this event, including name and description.
@@ -215,7 +215,7 @@ public function defineFormFields()
 A condition class should specify how it should appear in the user interface, providing a name, title and summary text. It also must declare an `isTrue` method for evaluating whether the condition is true or not.
 
 ```php
-class MyCondition extends \RainLab\Notify\Classes\ConditionBase
+class MyCondition extends \Winter\Notify\Classes\ConditionBase
 {
     /**
      * Return either ConditionBase::TYPE_ANY or ConditionBase::TYPE_LOCAL
@@ -288,9 +288,9 @@ fields:
 Model attribute conditions are designed specially for applying conditions to sets of model attributes.
 
 ```php
-class UserAttributeCondition extends \RainLab\Notify\Classes\ModelAttributesConditionBase
+class UserAttributeCondition extends \Winter\Notify\Classes\ModelAttributesConditionBase
 {
-    protected $modelClass = \RainLab\User\Models\User::class;
+    protected $modelClass = \Winter\User\Models\User::class;
 
     public function getGroupingTitle()
     {
@@ -341,7 +341,7 @@ attributes:
         label: Country
         type: relation
         relation:
-            model: RainLab\Location\Models\Country
+            model: Winter\Location\Models\Country
             label: Name
             nameFrom: name
             keyFrom: id
@@ -349,7 +349,7 @@ attributes:
 
 ## Save to database action
 
-There is a dedicated table in the database for storing events and their parameters. This table is accessed using the `RainLab\Notify\Models\Notification` model and can be referenced as a relation from your own models. In this example the `MyProject` model contains its own notification channel called `notifications`.
+There is a dedicated table in the database for storing events and their parameters. This table is accessed using the `Winter\Notify\Models\Notification` model and can be referenced as a relation from your own models. In this example the `MyProject` model contains its own notification channel called `notifications`.
 
 ```php
 class MyProject extends Model
@@ -358,14 +358,14 @@ class MyProject extends Model
 
     public $morphMany = [
         'my_notifications' => [
-            \RainLab\Notify\Models\Notification::class,
+            \Winter\Notify\Models\Notification::class,
             'name' => 'notifiable'
         ]
     ];
 }
 ```
 
-This channel should be registered with the `RainLab\Notify\NotifyRules\SaveDatabaseAction` so it appears as a related object when selecting the action.
+This channel should be registered with the `Winter\Notify\NotifyRules\SaveDatabaseAction` so it appears as a related object when selecting the action.
 
 ```php
 SaveDatabaseAction::extend(function ($action) {
@@ -395,6 +395,6 @@ Events can be extended to include new local conditions. Simply add the condition
 
 ```php
 UserActivatedEvent::extend(function($event) {
-    $event->conditions[] = \RainLab\UserPlus\NotifyRules\UserLocationAttributeCondition::class;
+    $event->conditions[] = \Winter\UserPlus\NotifyRules\UserLocationAttributeCondition::class;
 });
 ```

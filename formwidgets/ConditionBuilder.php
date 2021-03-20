@@ -1,8 +1,8 @@
-<?php namespace RainLab\Notify\FormWidgets;
+<?php namespace Winter\Notify\FormWidgets;
 
 use Backend\Classes\FormField;
 use Backend\Classes\FormWidgetBase;
-use RainLab\Notify\Classes\ConditionBase;
+use Winter\Notify\Classes\ConditionBase;
 use ApplicationException;
 use ValidationException;
 use Exception;
@@ -65,9 +65,9 @@ class ConditionBuilder extends FormWidgetBase
      */
     protected function loadAssets()
     {
-        $this->addJs('js/conditions.js', 'RainLab.Notify');
-        $this->addJs('js/conditions.multivalue.js', 'RainLab.Notify');
-        $this->addCss('css/conditions.css', 'RainLab.Notify');
+        $this->addJs('js/conditions.js', 'Winter.Notify');
+        $this->addJs('js/conditions.multivalue.js', 'Winter.Notify');
+        $this->addCss('css/conditions.css', 'Winter.Notify');
     }
 
     /**

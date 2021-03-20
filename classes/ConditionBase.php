@@ -1,8 +1,8 @@
-<?php namespace RainLab\Notify\Classes;
+<?php namespace Winter\Notify\Classes;
 
 use System\Classes\PluginManager;
-use October\Rain\Extension\ExtensionBase;
-use RainLab\Notify\Interfaces\Condition as ConditionInterface;
+use Winter\Storm\Extension\ExtensionBase;
+use Winter\Notify\Interfaces\Condition as ConditionInterface;
 
 /**
  * Condition Base Class

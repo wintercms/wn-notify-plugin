@@ -1,6 +1,6 @@
-<?php namespace RainLab\Notify\Classes;
+<?php namespace Winter\Notify\Classes;
 
-use RainLab\Notify\Interfaces\CompoundCondition as CompoundConditionInterface;
+use Winter\Notify\Interfaces\CompoundCondition as CompoundConditionInterface;
 
 /**
  * Compound Condition Class

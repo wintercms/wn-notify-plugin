@@ -1,4 +1,4 @@
-<?php namespace RainLab\Notify\Models;
+<?php namespace Winter\Notify\Models;
 
 use Model;
 use Markdown;
@@ -18,7 +18,7 @@ class Notification extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'rainlab_notify_notifications';
+    public $table = 'winter_notify_notifications';
 
     /**
      * @var array Guarded fields

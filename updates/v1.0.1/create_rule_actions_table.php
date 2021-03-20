@@ -1,14 +1,14 @@
-<?php namespace RainLab\Notify\Updates;
+<?php namespace Winter\Notify\Updates;
 
 use Schema;
-use October\Rain\Database\Schema\Blueprint;
-use October\Rain\Database\Updates\Migration;
+use Winter\Storm\Database\Schema\Blueprint;
+use Winter\Storm\Database\Updates\Migration;
 
 class CreateRuleActionsTable extends Migration
 {
     public function up()
     {
-        Schema::create('rainlab_notify_rule_actions', function(Blueprint $table) {
+        Schema::create('winter_notify_rule_actions', function(Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('class_name')->nullable();
@@ -20,6 +20,6 @@ class CreateRuleActionsTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('rainlab_notify_rule_actions');
+        Schema::dropIfExists('winter_notify_rule_actions');
     }
 }

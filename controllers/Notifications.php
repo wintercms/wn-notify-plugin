@@ -1,4 +1,4 @@
-<?php namespace RainLab\Notify\Controllers;
+<?php namespace Winter\Notify\Controllers;
 
 use Str;
 use Lang;
@@ -9,16 +9,16 @@ use Backend;
 use Redirect;
 use BackendMenu;
 use Backend\Classes\Controller;
-use RainLab\Notify\Models\NotificationRule;
+use Winter\Notify\Models\NotificationRule;
 use System\Classes\SettingsManager;
-use RainLab\Notify\Classes\EventBase;
+use Winter\Notify\Classes\EventBase;
 use ApplicationException;
 use Exception;
 
 /**
  * Notification rules controller
  *
- * @package rainlab\notify
+ * @package winter\notify
  * @author Alexey Bobkov, Samuel Georges
  */
 class Notifications extends Controller
@@ -28,7 +28,7 @@ class Notifications extends Controller
         \Backend\Behaviors\ListController::class
     ];
 
-    public $requiredPermissions = ['rainlab.notify.manage_notifications'];
+    public $requiredPermissions = ['winter.notify.manage_notifications'];
 
     public $listConfig = 'config_list.yaml';
     public $formConfig = 'config_form.yaml';
@@ -40,8 +40,8 @@ class Notifications extends Controller
     {
         parent::__construct();
 
-        BackendMenu::setContext('October.System', 'system', 'settings');
-        SettingsManager::setContext('RainLab.Notify', 'notifications');
+        BackendMenu::setContext('Winter.System', 'system', 'settings');
+        SettingsManager::setContext('Winter.Notify', 'notifications');
     }
 
     public function index()

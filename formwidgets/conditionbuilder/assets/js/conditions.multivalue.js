@@ -2,7 +2,7 @@
  * Plugin definition
  */
 +function ($) { "use strict";
-    var Base = $.oc.foundation.base,
+    var Base = $.wn.foundation.base,
         BaseProto = Base.prototype
 
     var ConditionMultiValue = function (element, options) {
@@ -12,7 +12,7 @@
         this.$emptyTemplate = $('[data-empty-record-template]', this.$el)
         this.$addedRecords = $('[data-added-records]', this.$el)
 
-        $.oc.foundation.controlUtils.markDisposable(element)
+        $.wn.foundation.controlUtils.markDisposable(element)
         Base.call(this)
 
         this.init()

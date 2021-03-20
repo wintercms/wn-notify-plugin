@@ -1,4 +1,4 @@
-<?php namespace RainLab\Notify\Interfaces;
+<?php namespace Winter\Notify\Interfaces;
 
 /**
  * This contract represents a Compound Condition rule.

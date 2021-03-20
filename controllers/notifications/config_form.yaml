@@ -2,15 +2,15 @@
 #  Form Behavior Config
 # ===================================
 
-name: rainlab.notify::lang.notifications.notification_rule
-form: $/rainlab/notify/models/notificationrule/fields.yaml
-modelClass: RainLab\Notify\Models\NotificationRule
-defaultRedirect: rainlab/notify/notifications
+name: winter.notify::lang.notifications.notification_rule
+form: $/winter/notify/models/notificationrule/fields.yaml
+modelClass: Winter\Notify\Models\NotificationRule
+defaultRedirect: winter/notify/notifications
 
 create:
-    redirect: rainlab/notify/notifications/update/:id
-    redirectClose: rainlab/notify/notifications
+    redirect: winter/notify/notifications/update/:id
+    redirectClose: winter/notify/notifications
 
 update:
-    redirect: rainlab/notify/notifications
-    redirectClose: rainlab/notify/notifications
+    redirect: winter/notify/notifications
+    redirectClose: winter/notify/notifications

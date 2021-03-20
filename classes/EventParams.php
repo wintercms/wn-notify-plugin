@@ -1,4 +1,4 @@
-<?php namespace RainLab\Notify\Classes;
+<?php namespace Winter\Notify\Classes;
 
 use Illuminate\Contracts\Queue\ShouldQueue;
 

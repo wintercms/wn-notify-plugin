@@ -11,14 +11,14 @@ function showConditionSettings(id) {
  * Plugin definition
  */
 +function ($) { "use strict";
-    var Base = $.oc.foundation.base,
+    var Base = $.wn.foundation.base,
         BaseProto = Base.prototype
 
     var RuleConditions = function (element, options) {
         this.$el = $(element)
         this.options = options || {}
 
-        $.oc.foundation.controlUtils.markDisposable(element)
+        $.wn.foundation.controlUtils.markDisposable(element)
         Base.call(this)
         this.init()
     }

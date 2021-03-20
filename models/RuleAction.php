@@ -1,4 +1,4 @@
-<?php namespace Rainlab\Notify\Models;
+<?php namespace Winter\Notify\Models;
 
 use Model;
 use Exception;
@@ -9,12 +9,12 @@ use SystemException;
  */
 class RuleAction extends Model
 {
-    use \October\Rain\Database\Traits\Validation;
+    use \Winter\Storm\Database\Traits\Validation;
 
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'rainlab_notify_rule_actions';
+    public $table = 'winter_notify_rule_actions';
 
     /**
      * @var array Guarded fields

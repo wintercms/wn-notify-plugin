@@ -14,7 +14,7 @@ class Plugin extends PluginBase
         return [
             'name'        => 'winter.notify::lang.plugin.name',
             'description' => 'winter.notify::lang.plugin.description',
-            'author'      => 'Alexey Bobkov, Samuel Georges',
+            'author'      => 'Winter CMS',
             'icon'        => 'icon-bullhorn',
             'replaces'    => 'RainLab.Notify'
         ];

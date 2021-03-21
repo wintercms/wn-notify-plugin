@@ -1,5 +1,5 @@
 {
-    "name": "winter/notify-plugin",
+    "name": "winter/wn-notify-plugin",
     "type": "winter-plugin",
     "description": "Notify plugin for Winter CMS",
     "homepage": "https://github.com/wintercms/wn-pages-plugin",
@@ -9,20 +9,29 @@
         {
             "name": "Alexey Bobkov",
             "email": "aleksey.bobkov@gmail.com",
-            "role": "Co-founder"
+            "role": "Original Author"
         },
         {
             "name": "Samuel Georges",
             "email": "daftspunky@gmail.com",
-            "role": "Co-founder"
+            "role": "Original Author"
+        },
+        {
+            "name": "Winter CMS Maintainers",
+            "homepage": "https://wintercms.com",
+            "role": "Maintainer"
         }
     ],
+    "support": {
+        "issues": "https://github.com/wintercms/wn-notify-plugin/issues",
+        "discord": "https://discord.gg/D5MFSPH6Ux",
+        "source": "https://github.com/wintercms/wn-notify-plugin"
+    },
     "require": {
-        "php": ">=5.5.9",
+        "php": ">=7.2",
         "composer/installers": "~1.0"
     },
     "extra": {
         "installer-name": "notify"
-    },
-    "minimum-stability": "dev"
+    }
 }

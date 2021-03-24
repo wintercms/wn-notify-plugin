@@ -1,7 +1,7 @@
 <?php namespace Winter\Notify\Models;
 
+use Lang;
 use Model;
-use ApplicationException;
 use Winter\Notify\Classes\EventBase;
 use Winter\Notify\Classes\ConditionBase;
 
@@ -116,7 +116,7 @@ class NotificationRule extends Model
         }
 
         $this->class_name = $class;
-        $this->event_name = array_get($this->eventDetails(), 'name', 'Unknown');
+        $this->event_name = Lang::get(array_get($this->eventDetails(), 'name', 'Unknown'));
         return true;
     }
 

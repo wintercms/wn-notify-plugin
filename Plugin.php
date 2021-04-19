@@ -16,7 +16,7 @@ class Plugin extends PluginBase
             'description' => 'winter.notify::lang.plugin.description',
             'author'      => 'Alexey Bobkov, Samuel Georges',
             'icon'        => 'icon-bullhorn',
-            'replaces'    => 'RainLab.Notify'
+            'replaces'    => ['RainLab.Notify' => '<= 1.0.3'],
         ];
     }
 

@@ -6,6 +6,6 @@
     - v1.0.1/create_rule_actions_table.php
 "1.0.2": Fixes crashing bug.
 "1.0.3": Added Turkish & Russian translations, various bug fixes.
-"1.1.0":
+"2.0.0":
     - Rebrand to Winter.Notify
-    - v1.1.0/rename_tables.php
+    - v2.0.0/rename_tables.php

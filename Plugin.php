@@ -16,7 +16,7 @@ class Plugin extends PluginBase
             'description' => 'winter.notify::lang.plugin.description',
             'author'      => 'Winter CMS',
             'icon'        => 'icon-bullhorn',
-            'replaces'    => 'RainLab.Notify'
+            'replaces'    => ['RainLab.Notify' => '<= 1.0.3'],
         ];
     }
 

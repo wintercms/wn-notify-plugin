@@ -7,7 +7,7 @@ class CreateNotificationRulesTable extends Migration
 {
     public function up()
     {
-        Schema::create('winter_notify_notification_rules', function ($table) {
+        Schema::create('rainlab_notify_notification_rules', function ($table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('name')->nullable();
@@ -24,6 +24,6 @@ class CreateNotificationRulesTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('winter_notify_notification_rules');
+        Schema::dropIfExists('rainlab_notify_notification_rules');
     }
 }

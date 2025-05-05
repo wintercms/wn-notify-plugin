@@ -36,6 +36,8 @@ class Notifications extends Controller
     public $eventAlias;
     protected $eventClass;
 
+    public $formLayout = 'fancy';
+
     public function __construct()
     {
         parent::__construct();

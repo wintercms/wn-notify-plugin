@@ -1,19 +1,15 @@
-<?php namespace Winter\Notify\Controllers;
+<?php
 
-use Str;
-use Lang;
-use File;
-use Mail;
-use Flash;
-use Backend;
-use Redirect;
-use BackendMenu;
+namespace Winter\Notify\Controllers;
+
 use Backend\Classes\Controller;
-use Winter\Notify\Models\NotificationRule;
+use Backend\Facades\Backend;
+use Backend\Facades\BackendMenu;
+use Exception;
 use System\Classes\SettingsManager;
 use Winter\Notify\Classes\EventBase;
-use ApplicationException;
-use Exception;
+use Winter\Notify\Models\NotificationRule;
+use Winter\Storm\Exception\ApplicationException;
 
 /**
  * Notification rules controller
@@ -30,11 +26,10 @@ class Notifications extends Controller
 
     public $requiredPermissions = ['winter.notify.manage_notifications'];
 
-    public $listConfig = 'config_list.yaml';
-    public $formConfig = 'config_form.yaml';
-
     public $eventAlias;
     protected $eventClass;
+
+    public $formLayout = 'fancy';
 
     public function __construct()
     {
@@ -52,24 +47,24 @@ class Notifications extends Controller
 
     public function create($eventAlias = null)
     {
-        try {
-            if (!$eventAlias) {
-                throw new ApplicationException('Missing a rule code');
-            }
+        if (empty($eventAlias)) {
+            abort(404);
+        }
 
-            $this->eventAlias = $eventAlias;
-            $this->bodyClass = 'compact-container breadcrumb-fancy';
-            $this->asExtension('FormController')->create();
-        }
-        catch (Exception $ex) {
-            $this->handleError($ex);
-        }
+        $this->eventAlias = $eventAlias;
+
+        $this->asExtension('FormController')->create();
     }
 
-    public function update($recordId = null, $context = null)
+    public function create_onSave($eventAlias = null)
     {
-        $this->bodyClass = 'compact-container breadcrumb-fancy';
-        $this->asExtension('FormController')->update($recordId, $context);
+        if (empty($eventAlias)) {
+            abort(404);
+        }
+
+        $this->eventAlias = $eventAlias;
+
+        return $this->asExtension('FormController')->create_onSave();
     }
 
     public function formExtendModel($model)
@@ -122,7 +117,7 @@ class Notifications extends Controller
 
     protected function getEventClass()
     {
-        $alias = post('event_alias', $this->eventAlias);
+        $alias = $this->eventAlias;
 
         if ($this->eventClass !== null) {
             return $this->eventClass;

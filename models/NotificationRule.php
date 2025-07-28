@@ -182,7 +182,12 @@ class NotificationRule extends Model
     {
         $results = [];
 
-        $dbRules = self::applyClass($eventClass)->get();
+        if (self::hasDatabaseTable()) {
+            $dbRules = self::applyClass($eventClass)->get();
+        } else {
+            $dbRules = [];
+        }
+
         $presets = (array) EventBase::findEventPresetsByClass($eventClass);
 
         foreach ($dbRules as $dbRule) {

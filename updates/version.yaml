@@ -13,3 +13,6 @@
     - Rebrand table indexes
     - v2.0.1/rename_indexes.php
 "2.1.0": "Use new controller behavior default views in Winter v1.2.8+"
+"2.1.1":
+    - Fixed notification rules failing to load when the plugin's database tables have not been migrated yet.
+    - Relaxed the `winter/wn-backend-module` constraint and dropped the redundant `php` requirement.
